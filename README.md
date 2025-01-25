@@ -44,6 +44,4 @@ equals(other: Cpf): boolean
 possibleUfs(): Set<Uf>
 Retorna as possíveis UFs de origem
 
-see https://janio.sarmento.org/curiosidade-identificacao-de-cpf-conforme-o-estado/
-
 Cpf.from('052.330.457-96').possibleUfs() // Set {"RJ", "ES"}
