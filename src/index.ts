@@ -70,10 +70,6 @@ const choose = <T>(arr: T[]): T => arr[randInt(arr.length - 1)]
 export class Cpf {
   readonly _tag: 'Cpf' = 'Cpf'
 
-  /**
-   * Relação do dígito que representa a Uf de origem
-   * @see https://janio.sarmento.org/curiosidade-identificacao-de-cpf-conforme-o-estado/
-   */
   static ufs = ufs
 
   /**
@@ -82,17 +78,17 @@ export class Cpf {
    *
    * Com pontuação:
    * ```ts
-   * Cpf.isValid('453.178.287-91') // true
+   * Cpf.isValid('052.330.457-96') // true
    * ```
    *
    * Sem pontuação:
    * ```ts
-   * Cpf.isValid('45317828791') // true
+   * Cpf.isValid('05233045796') // true
    * ```
    *
    * Dígito verificador inválido:
    * ```ts
-   * Cpf.isValid('45317828792') // false
+   * Cpf.isValid('05233045796') // false
    * ```
    *
    *
@@ -109,10 +105,10 @@ export class Cpf {
    *
    * Possíveis assinaturas:
    * ```ts
-   * Cpf.from('453.178.287-91') // Completo e pontuado
-   * Cpf.from('45317828791') // Completo e não pontuado
-   * Cpf.from('453.178.287') // Sem os dígitos verificadores
-   * Cpf.from('453.178.28', 'RJ') // Específicando a UF pela sigla
+   * Cpf.from('052.330.457-96') // Completo e pontuado
+   * Cpf.from('05233045796') // Completo e não pontuado
+   * Cpf.from('052.330.457') // Sem os dígitos verificadores
+   * Cpf.from('052.330.45', 'RJ') // Específicando a UF pela sigla
    * ```
    *
    * @param cpf
@@ -148,8 +144,8 @@ export class Cpf {
    * Gera um Cpf aleatório
    *
    * ```ts
-   * Cpf.random() // Cpf { __cpf: '453.178.287-91' }
-   * Cpf.random('RJ') // Cpf { __cpf: '453.178.287-91' }
+   * Cpf.random() // Cpf { __cpf: '052.330.457-96' }
+   * Cpf.random('RJ') // Cpf { __cpf: '052.330.457-96' }
    * ```
    *
    * @param [uf]
@@ -169,7 +165,7 @@ export class Cpf {
 
   /**
    * ```ts
-   * Cpf.from('453.178.287-91').strip() // '45317828791'
+   * Cpf.from('052.330.457-96').strip() // '05233045796'
    * ```
    */
   strip(): CpfString {
@@ -178,7 +174,7 @@ export class Cpf {
 
   /**
    * ```ts
-   * Cpf.from('45317828791').format() // '453.178.287-91'
+   * Cpf.from('05233045796').format() // '052.330.457-96'
    * ```
    */
   format(): CpfString {
@@ -187,10 +183,8 @@ export class Cpf {
 
   /**
    * Retorna as possíveis UFs de origem
-   * @see https://janio.sarmento.org/curiosidade-identificacao-de-cpf-conforme-o-estado/
-   *
    * ```ts
-   * Cpf.from('453.178.287-91').possibleUfs() // Set {"RJ", "ES"}
+   * Cpf.from('052.330.457-96').possibleUfs() // Set {"RJ", "ES"}
    * ```
    */
   possibleUfs(): Set<Uf> {
