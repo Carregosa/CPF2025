@@ -4,7 +4,7 @@
 Micro-utilitário para validação e geração de CPFs
 
 Install
-npm i @bCarregosa/CPF2025
+npm i @Carregosa/CPF2025
 Usage
 import { Cpf } from '@Carregosa/CPF2025'
 ou
