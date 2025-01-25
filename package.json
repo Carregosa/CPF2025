@@ -1,0 +1,48 @@
+{
+  "name": "@Carregosa/CPF2025",
+  "version": "1.1.0",
+  "description": "Micro-utilitário para validação e geração de CPFs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carregosa/CPF2025.git"
+  },
+  "keywords": [
+    "cpf"
+  ],
+  "author": "Paulo Roberto Carregosa Luiz <paulorcarregosaluiz@gmail.com> (https://github.com/Carregosa)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Carregosa/CPF2025/issues"
+  },
+  "homepage": "https://github.com/Carregosa/CPF2025#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.3"
+  }
+}
