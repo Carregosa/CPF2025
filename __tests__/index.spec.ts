@@ -1,9 +1,9 @@
 import { Cpf } from '../src'
 
 describe(Cpf.isValid, () => {
-  test('Com pontuação', () => expect(Cpf.isValid('453.178.287-91')).toBe(true))
+  test('Com pontuação', () => expect(Cpf.isValid('052.330.457-96')).toBe(true))
 
-  test('Sem pontuação', () => expect(Cpf.isValid('45317828791')).toBe(true))
+  test('Sem pontuação', () => expect(Cpf.isValid('05233045796')).toBe(true))
 
   test('Dígito verificador inválido', () =>
     expect(Cpf.isValid('45317828792')).toBe(false))
@@ -11,10 +11,10 @@ describe(Cpf.isValid, () => {
 
 describe(Cpf.from, () => {
   test('Possíveis assinaturas', () => {
-    const formatted = Cpf.from('453.178.287-91')
-    const stripped = Cpf.from('45317828791')
-    const withoutDvs = Cpf.from('453.178.287')
-    const withUf = Cpf.from('453.178.28', 'RJ')
+    const formatted = Cpf.from('052.330.457-96')
+    const stripped = Cpf.from('05233045796')
+    const withoutDvs = Cpf.from('052.330.457')
+    const withUf = Cpf.from('052.330.45', 'RJ')
 
     expect(
       formatted.equals(stripped) &&
@@ -23,7 +23,7 @@ describe(Cpf.from, () => {
     ).toBe(true)
   })
 
-  test('Gera _tag', () => expect(Cpf.from('453.178.287-91')._tag).toBe('Cpf'))
+  test('Gera _tag', () => expect(Cpf.from('052.330.457-96')._tag).toBe('Cpf'))
 })
 
 describe(Cpf.random, () => {
@@ -34,11 +34,11 @@ describe(Cpf.random, () => {
 })
 
 describe(Cpf, () => {
-  test('strip', () => expect(Cpf.from('453.178.287-91').strip()).toBe('45317828791'))
-  test('format', () => expect(Cpf.from('45317828791').format()).toBe('453.178.287-91'))
+  test('strip', () => expect(Cpf.from('052.330.457-96').strip()).toBe('05233045796'))
+  test('format', () => expect(Cpf.from('05233045796').format()).toBe('052.330.457-96))
   test('equals', () => {
-    const formatted = Cpf.from('453.178.287-91')
-    const stripped = Cpf.from('45317828791')
+    const formatted = Cpf.from('052.330.457-96')
+    const stripped = Cpf.from('05233045796')
 
     expect(formatted.equals(stripped)).toBe(true)
   })
